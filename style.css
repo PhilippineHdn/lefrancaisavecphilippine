@@ -33,7 +33,7 @@
     color: var(--thirdcolor);
     font-size: 20px;
     padding: 10px 5px;
-    
+    white-space: nowrap;
 }
 
 #logo {
@@ -73,11 +73,12 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--maincolor);
+    padding-top: 20px;
 }
 
 #myself {
     margin-top: auto;
-    height: 460px;
+    width: 460px;
 }
 
 #toflex {
@@ -89,19 +90,23 @@
     font-size: 25px;
 }
 
+.bubbles {
+    padding: 20px 20px;
+    border-radius: 30px;
+    width: fit-content;
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+}
+
 #firstbuble {
     background-color: var(--secondcolor);
     color: var(--thirdcolor);
-    padding: 20px 20px;
-    border-radius: 30px 30px 30px 30px ;
 }
 
 #secondbuble {
     background-color: var(--maincolor);
     color: var(--thirdcolor);
-    padding: 20px 20px;
-    border-radius: 30px 30px 30px 30px ;
-    margin-right: 198px;
 }
 
 #levels {
@@ -110,6 +115,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.tocenter {
+    width: 100%;
 }
 
 
@@ -136,24 +145,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 100px;
-    
 }
 
 .circle {
     background: linear-gradient(135deg, var(--maincolor) 0%, #ff3500 100%);
-    width: 300px;
-    height: 300px; 
+    width: 30%;
+    max-width: 250px;
+    aspect-ratio: 1 / 1;
     margin-top: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .text {
-    font-size: 30px;
+    font-size: 28px;
     font-style: bold;
     color: var(--thirdcolor);
 }
@@ -286,6 +293,7 @@
 
 .littletext {
     font-size: 20px;
+    margin-bottom: 20px;
 }
 
 #testimonials {
@@ -318,18 +326,18 @@
     width: 200%;
     text-align: center;
     left: -90px;
-    top: 45px;
+    top: 50px;
     font-style: italic;
-    font-size: 23px;
+    font-size: 20px;
 }
 
 .blocktestimony {
+    display: flex;
     text-align: center;
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
     height: 300px;
-    
 }
 
 .bold {
@@ -349,7 +357,7 @@
 }
 
 #contactpicture {
-    height: 470px;
+    width: 470px;
     margin-left: 100px;
 }
 
@@ -420,32 +428,101 @@ button {
     color: blue;
 }
 
+@media screen and (max-width: 1200px) {
+    .title {
+        font-size: 40px;
+    }
+    .lighttext {
+        font-size: 20px;
+    }
+    .roundtestomony {
+        width: 90%;
+        height: 90%;
+    }
+    .testimony {
+        width: 150%;
+        left: -55px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    #myself {
+        width: 350px;
+    }
+    .bubbles {
+        font-size: 20px
+    }
+    .parenttestimony:last-child {
+        display: none;
+    }
+
+    /* #pricing {
+        display: flex;
+        justify-content: space-evenly;
+    } */
+
+    .package, .packagemiddle {
+        width: 240px;
+    }
+
+    .price {
+        font-size: 30px;
+    }
+    .included, .option, .option1 {
+        font-size: 14px;
+    }
+
+    #aboutme {
+        flex-direction: column;
+        align-items: center;
+    }
+    .textaboutme {
+        width: 90%;
+    }
+    .textcontact {
+        width: auto;
+        margin: auto;
+    }
+    #contact {
+        gap: 15px;
+    }
+    #contactpicture {
+        height: 325px;
+        margin-left: 0px;
+    }
+}
+
 @media screen and (max-width: 600px) {
 
 .navbar {
-    height: 50px;
-}    
+    height: 75px;
+    align-items: center;
+    justify-content: center;
+}
 
 #logo {
-    width: 80px;
+    width: 135px;
     z-index: 1;
 }
 
 #menu {
-    visibility: hidden;
+    display: none;
 }
 
 #introduction {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    padding-top: 0px;
 }
 
 #toflex {
-    width: 70%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20px;
 }
 
 #myself {   
@@ -463,6 +540,7 @@ button {
     justify-content: center;
     margin-top: 30px;
     font-size: 20px;
+    text-align: center;
 }
 
 #levels {
@@ -472,8 +550,8 @@ button {
 #pricing {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    height: 1300px;
+    gap: 20px;
+    padding: 40px 0px;
 }
 
 #aboutme {
@@ -493,7 +571,8 @@ button {
 }
 
 #testimonials {
-    height: 1000px;
+    padding: 56px 0px;
+    /* height: 1000px; */
 }
 
 .lighttext {
@@ -509,9 +588,20 @@ button {
     height: auto;
 }
 
+.parenttestimony:last-child {
+    display: block;
+}
+.roundtestomony {
+    width: 100%;
+    height: 100%;
+}
+
+.testimony {
+    left: -62px;
+}
 .temoignage {
     font-size: 20px;
-    width: 80%;
+    width: 110%;
     margin: auto;
 }
 
@@ -524,6 +614,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 0px;
 }
 
 #contactpicture {
@@ -565,109 +656,4 @@ button {
     font-size: 30px;
 }
 
-}
-
-@media screen and (min-width: 600px) and (max-width:1100px) {
-
-    #menu {
-        justify-content: center;
-    }
-
-    #introduction {
-        justify-content: normal;
-    }
-
-    #toflex {
-        margin: 0;
-    }
-
-    #firstbuble {
-        width: fit-content;
-    }
-
-    #levels {
-        height: 550px;
-        width: 960px;
-    }
-
-    .levels {
-        gap: 20px;
-    }
-
-    #pricing {
-        height: 650px;
-        width: 900px;
-        margin-left: 30px;
-    }
-
-    
-    #myself {
-        /* height: 90%; */
-    }
-
-    #aboutme {
-        height: 550px;
-    }
-
-    .textaboutme {
-        margin-left: 40px;
-    }
-
-    #testimonials {
-        height: 1000px;
-        width: 1000px;
-    }
-    
-    .lighttext {
-        font-size: 30px;
-        width: 80%;
-        margin: auto;
-    }
-    
-    .blocktestimony {
-        display: flex;
-        flex-direction: column;
-        gap: 60px;
-        height: auto;
-    }
-    
-    .temoignage {
-        font-size: 20px;
-        width: 80%;
-        margin: auto;
-    }
-    
-    .student {
-        margin-top: 215px;
-    }
-
-    #contact {
-        height: 1000px;
-        width: 1000px;
-    }
-
-    #contactpicture {
-        height: 80%;
-        margin-left: 30px;
-    }
-
-    .textcontact {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-    }
-
-    #contact {
-        height: 600px;
-    }
-
-    #contact .title {
-        font-size: 40px;
-    }
-
-    .explanation {
-        text-align: center;
-    }
 }
