@@ -488,7 +488,7 @@ button {
         gap: 15px;
     }
     #contactpicture {
-        height: 325px;
+        width: 325px;
         margin-left: 0px;
     }
 }
@@ -525,7 +525,7 @@ button {
     padding-bottom: 20px;
 }
 
-#myself {   
+#myself {
     object-fit: cover;
     width: clamp(300px, 85%, 465px);
 }
@@ -618,7 +618,7 @@ button {
 }
 
 #contactpicture {
-    height: 300px;
+    width: 300px;
     margin-left: 0px;
     margin-top: 20px;
 }
